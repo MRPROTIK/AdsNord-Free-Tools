@@ -1,0 +1,758 @@
+<!-- AdsNord /tools hub page content (FINAL + Rank Math 90+ tweaks) -->
+
+<section class="adsnord-tools" id="adsnord-tools" aria-label="AdsNord Free Tools Hub">
+  <!-- ===== SEO META (place inside <head> if possible; otherwise keep as reference) ===== -->
+  <!--
+  <title>Free Google Ads Tools for PPC Analysis & Optimization | AdsNord</title>
+  <meta name="description" content="Explore AdsNord’s free Google Ads tools to analyze keywords, audit campaign health, improve PPC performance, and reduce wasted ad spend." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://adsnord.com/tools" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free Google Ads Tools for PPC Analysis & Optimization | AdsNord" />
+  <meta property="og:description" content="Explore AdsNord’s free Google Ads tools to analyze keywords, audit campaign health, improve PPC performance, and reduce wasted ad spend." />
+  <meta property="og:url" content="https://adsnord.com/tools" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Google Ads Tools for PPC Analysis & Optimization | AdsNord" />
+  <meta name="twitter:description" content="Explore AdsNord’s free Google Ads tools to analyze keywords, audit campaign health, improve PPC performance, and reduce wasted ad spend." />
+
+  <meta name="keywords" content="free google ads tools, google ads tools free, ppc tools for small business, free ppc audit tools, google ads optimization tools, ppc performance tools" />
+  -->
+
+  <style>
+    /* ===== Scoped reset ===== */
+    .adsnord-tools, .adsnord-tools * { box-sizing: border-box; }
+    .adsnord-tools img, .adsnord-tools svg { max-width: 100%; height: auto; }
+    .adsnord-tools p, .adsnord-tools li, .adsnord-tools a { overflow-wrap: anywhere; word-break: break-word; }
+
+    /* ===== Visual style (light, premium, fast) ===== */
+    .adsnord-tools{
+      --bg1:#EAF2FF;
+      --bg2:#F7EEFF;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.70);
+      --border:rgba(11,18,32,.10);
+      --shadow:0 10px 26px rgba(11,18,32,.08);
+      --accent:#2563eb;
+      --accent2:rgba(37,99,235,.10);
+      --radius:20px;
+      --radius2:16px;
+
+      color: var(--text);
+      background: radial-gradient(900px 420px at 18% -10%, rgba(37,99,235,.14), transparent 55%),
+                  radial-gradient(860px 420px at 88% 0%, rgba(168,85,247,.12), transparent 55%),
+                  linear-gradient(135deg, var(--bg1), var(--bg2));
+      padding: 28px 14px 44px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    .adsnord-tools .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ===== Hero ===== */
+    .adsnord-tools .hero{
+      background: rgba(255,255,255,.70);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 16px;
+      backdrop-filter: blur(6px);
+    }
+
+    .adsnord-tools .eyebrow{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(11,18,32,.62);
+      margin: 0 0 10px;
+    }
+    .adsnord-tools .eyebrow .dot{
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px var(--accent2);
+    }
+
+    .adsnord-tools h1{
+      margin: 0 0 10px;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .adsnord-tools .intro{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+      max-width: 78ch;
+    }
+
+    .adsnord-tools .trustline{
+      margin: 10px 0 0;
+      color: rgba(11,18,32,.60);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .adsnord-tools .hero-links{
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .adsnord-tools .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.75);
+      color: rgba(11,18,32,.78);
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .adsnord-tools .pill:hover{ border-color: rgba(37,99,235,.35); }
+
+    /* ===== Start-with quick paths ===== */
+    .adsnord-tools .startwith{
+      margin-top: 14px;
+      background: rgba(255,255,255,.75);
+      border: 1px solid var(--border);
+      border-radius: var(--radius2);
+      padding: 12px;
+    }
+    .adsnord-tools .startwith-title{
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      color: rgba(11,18,32,.82);
+    }
+    .adsnord-tools .startwith-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .adsnord-tools .startcard{
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(11,18,32,.06);
+      text-decoration: none;
+      min-width: 220px;
+      flex: 1 1 240px;
+    }
+    .adsnord-tools .startcard strong{
+      display: block;
+      font-size: 13px;
+      color: rgba(11,18,32,.92);
+    }
+    .adsnord-tools .startcard span{
+      display: block;
+      font-size: 12.5px;
+      color: rgba(11,18,32,.62);
+      margin-top: 2px;
+    }
+    .adsnord-tools .startcard i{
+      font-style: normal;
+      color: rgba(37,99,235,.85);
+      font-weight: 900;
+    }
+    .adsnord-tools .startcard:hover{
+      border-color: rgba(37,99,235,.28);
+    }
+
+    /* ===== Section headings ===== */
+    .adsnord-tools h2{
+      margin: 22px 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .adsnord-tools .section-note{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      max-width: 90ch;
+    }
+
+    /* ===== Cards grid ===== */
+    .adsnord-tools .grid{
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .adsnord-tools .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 190px;
+    }
+
+    .adsnord-tools .card-top{
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .adsnord-tools .icon{
+      flex: 0 0 42px;
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(37,99,235,.18);
+      background: radial-gradient(14px 14px at 30% 30%, rgba(37,99,235,.22), transparent 60%),
+                  rgba(37,99,235,.06);
+      display: grid;
+      place-items: center;
+      color: rgba(11,18,32,.82);
+    }
+
+    .adsnord-tools h3{
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .adsnord-tools .card h3 a{
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .adsnord-tools .card h3 a:hover{
+      border-bottom-color: rgba(37,99,235,.35);
+    }
+
+    .adsnord-tools .benefit{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .adsnord-tools .output{
+      margin: 0;
+      color: rgba(11,18,32,.70);
+      font-size: 12.8px;
+      line-height: 1.5;
+    }
+    .adsnord-tools .output strong{ color: rgba(11,18,32,.88); }
+
+    .adsnord-tools .soft-cta{
+      margin: 0;
+      color: rgba(11,18,32,.62);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    .adsnord-tools .actions{
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-top: 4px;
+    }
+
+    .adsnord-tools .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(37,99,235,.30);
+      background: linear-gradient(180deg, rgba(37,99,235,.14), rgba(37,99,235,.08));
+      color: rgba(11,18,32,.92);
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .adsnord-tools .btn:hover{ border-color: rgba(37,99,235,.45); }
+
+    .adsnord-tools .link{
+      color: rgba(11,18,32,.70);
+      font-size: 13px;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding: 6px 2px;
+    }
+    .adsnord-tools .link:hover{
+      color: rgba(11,18,32,.92);
+      border-bottom-color: rgba(37,99,235,.35);
+    }
+
+    /* ===== How-to section ===== */
+    .adsnord-tools .howto{
+      margin-top: 18px;
+      background: rgba(255,255,255,.70);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      backdrop-filter: blur(6px);
+    }
+    .adsnord-tools .howto ul{
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .adsnord-tools .howto li{ margin: 6px 0; }
+
+    /* ===== FAQ ===== */
+    .adsnord-tools .faq{
+      margin-top: 18px;
+      background: rgba(255,255,255,.70);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 10px;
+      backdrop-filter: blur(6px);
+    }
+
+    .adsnord-tools details{
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: #fff;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+
+    .adsnord-tools summary{
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 14px;
+      font-weight: 800;
+      font-size: 14px;
+      color: rgba(11,18,32,.92);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .adsnord-tools summary::-webkit-details-marker{ display:none; }
+
+    .adsnord-tools .chev{
+      flex: 0 0 auto;
+      width: 22px; height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(37,99,235,.22);
+      background: rgba(37,99,235,.08);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      line-height: 1;
+      color: rgba(11,18,32,.85);
+      transform: rotate(0deg);
+      transition: transform .18s ease;
+    }
+    .adsnord-tools details[open] .chev{ transform: rotate(180deg); }
+
+    .adsnord-tools .faq-body{
+      padding: 0 14px 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ===== Resources ===== */
+    .adsnord-tools .resources{
+      margin-top: 18px;
+      background: rgba(255,255,255,.70);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      backdrop-filter: blur(6px);
+    }
+    .adsnord-tools .resources h2{
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .adsnord-tools .resources p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 90ch;
+    }
+    .adsnord-tools .resources .row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .adsnord-tools .reslink{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: #fff;
+      text-decoration: none;
+      color: rgba(11,18,32,.90);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .adsnord-tools .reslink:hover{
+      border-color: rgba(37,99,235,.28);
+    }
+    .adsnord-tools .reslink .arrow{
+      color: rgba(37,99,235,.85);
+      font-weight: 900;
+    }
+
+    /* ===== Focus styles ===== */
+    .adsnord-tools a:focus-visible,
+    .adsnord-tools summary:focus-visible{
+      outline: 3px solid rgba(37,99,235,.35);
+      outline-offset: 3px;
+      border-radius: 14px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (min-width: 720px){
+      .adsnord-tools{ padding: 38px 18px 56px; }
+      .adsnord-tools .hero{ padding: 22px 22px; }
+      .adsnord-tools h1{ font-size: 34px; }
+      .adsnord-tools .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+      .adsnord-tools .card{ padding: 16px; min-height: 200px; }
+    }
+    @media (min-width: 1040px){
+      .adsnord-tools .grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 420px){
+  .adsnord-tools .actions{ flex-direction: column; align-items: stretch; }
+  .adsnord-tools .btn{ width: 100%; }
+}
+
+  </style>
+
+  <div class="wrap">
+    <!-- HERO -->
+    <header class="hero">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>FREE GOOGLE ADS TOOLS</p>
+      <h1>Free Google Ads Tools to Analyze, Fix &amp; Improve PPC Performance</h1>
+
+      <!-- Rank Math keyword placement: exact phrase in first 10% -->
+      <p class="intro">
+        Explore our <strong>free Google Ads tools</strong> to analyze keywords, audit campaign health, improve PPC performance,
+        reduce wasted ad spend, and remove landing page friction—built for fast decisions and real-world optimization.
+      </p>
+
+      <p class="trustline">Built by AdsNord — focused on Google Ads performance and measurement.</p>
+
+      <!-- Start-with quick paths -->
+      <div class="startwith" aria-label="Start with quick paths">
+        <p class="startwith-title">Start with…</p>
+        <div class="startwith-row">
+          <a class="startcard"
+             href="https://adsnord.com/tools/keyword-analyzer#start"
+             data-cta="startwith"
+             data-tool="keyword-analyzer"
+             aria-label="Fix wasted spend with Keyword Analyzer">
+            <div>
+              <strong>Fix wasted spend</strong>
+              <span>Keyword Analyzer</span>
+            </div>
+            <i aria-hidden="true">→</i>
+          </a>
+
+          <a class="startcard"
+             href="https://adsnord.com/tools/campaign-health-score#start"
+             data-cta="startwith"
+             data-tool="campaign-health-score"
+             aria-label="Run a quick account check with Campaign Health Score">
+            <div>
+              <strong>Quick account check</strong>
+              <span>Campaign Health Score</span>
+            </div>
+            <i aria-hidden="true">→</i>
+          </a>
+
+          <a class="startcard"
+             href="https://adsnord.com/tools/landing-page-behavior-analysis#start"
+             data-cta="startwith"
+             data-tool="landing-page-behavior-analysis"
+             aria-label="Improve conversions with Landing Page Behavior Analysis">
+            <div>
+              <strong>Improve conversions</strong>
+              <span>Landing Page Analysis</span>
+            </div>
+            <i aria-hidden="true">→</i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div class="hero-links" aria-label="Quick links">
+        <a class="pill" href="https://adsnord.com/tools/keyword-analyzer" data-cta="quicklink" data-tool="keyword-analyzer">Keyword Analyzer</a>
+        <a class="pill" href="https://adsnord.com/tools/campaign-health-score" data-cta="quicklink" data-tool="campaign-health-score">Campaign Health Score</a>
+        <a class="pill" href="https://adsnord.com/tools/ai-ad-copy-generator" data-cta="quicklink" data-tool="ai-ad-copy-generator">AI Ad Copy Generator</a>
+        <a class="pill" href="https://adsnord.com/tools/ppc-performance-dashboard" data-cta="quicklink" data-tool="ppc-performance-dashboard">PPC Dashboard</a>
+        <a class="pill" href="https://adsnord.com/tools/landing-page-behavior-analysis" data-cta="quicklink" data-tool="landing-page-behavior-analysis">Landing Page Analysis</a>
+        <a class="pill" href="https://adsnord.com/tools/ai-google-ads-self-audit" data-cta="quicklink" data-tool="ai-google-ads-self-audit">AI Self Audit</a>
+      </div>
+    </header>
+
+    <!-- TOOLS -->
+    <h2>Explore Our Free Google Ads Tools</h2>
+
+    <p class="section-note">
+      These free Google Ads tools are built for keyword analysis, PPC audits, performance tracking, ad copy optimization, and landing page conversion improvements.
+      Use them to identify wasted ad spend, prioritize fixes, and improve account efficiency with clear outputs and next steps.
+    </p>
+
+    <main class="grid" aria-label="Free tools list">
+      <!-- 1 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">🔎</div>
+          <div>
+            <h3><a href="https://adsnord.com/tools/keyword-analyzer" data-cta="card-title" data-tool="keyword-analyzer">Keyword Analyzer</a></h3>
+            <p class="benefit">Identify low-intent keywords, overlap, and waste signals to improve relevance and reduce PPC cost.</p>
+          </div>
+        </div>
+        <p class="output"><strong>Output:</strong> intent flags, overlap warnings, and keyword cleanup suggestions.</p>
+        <p class="soft-cta">Best for: keyword cleanup, intent filtering, and Google Ads optimization.</p>
+        <div class="actions">
+          <a class="link" href="https://adsnord.com/tools/keyword-analyzer" data-cta="secondary" data-tool="keyword-analyzer">View tool →</a>
+          <a class="btn" href="https://adsnord.com/tools/keyword-analyzer#start" data-cta="primary" data-tool="keyword-analyzer">Analyze Keywords →</a>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">✅</div>
+          <div>
+            <h3><a href="https://adsnord.com/tools/campaign-health-score" data-cta="card-title" data-tool="campaign-health-score">Campaign Health Score</a></h3>
+            <p class="benefit">Get a quick PPC health check to find where campaign structure, tracking, or spend efficiency is leaking.</p>
+          </div>
+        </div>
+        <p class="output"><strong>Output:</strong> health score, issue checklist, and priority fixes.</p>
+        <p class="soft-cta">Best for: fast audit signals and fixes that move performance.</p>
+        <div class="actions">
+          <a class="link" href="https://adsnord.com/tools/campaign-health-score" data-cta="secondary" data-tool="campaign-health-score">View tool →</a>
+          <a class="btn" href="https://adsnord.com/tools/campaign-health-score#start" data-cta="primary" data-tool="campaign-health-score">Check Health →</a>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">✍️</div>
+          <div>
+            <h3><a href="https://adsnord.com/tools/ai-ad-copy-generator" data-cta="card-title" data-tool="ai-ad-copy-generator">AI Ad Copy Generator</a></h3>
+            <p class="benefit">Generate intent-matched, policy-conscious ad copy to improve CTR, relevance, and message clarity.</p>
+          </div>
+        </div>
+        <p class="output"><strong>Output:</strong> ad angles, headlines, and descriptions ready to test.</p>
+        <p class="soft-cta">Best for: new campaigns, refreshes, and faster testing cycles.</p>
+        <div class="actions">
+          <a class="link" href="https://adsnord.com/tools/ai-ad-copy-generator" data-cta="secondary" data-tool="ai-ad-copy-generator">View tool →</a>
+          <a class="btn" href="https://adsnord.com/tools/ai-ad-copy-generator#start" data-cta="primary" data-tool="ai-ad-copy-generator">Generate Copy →</a>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">📈</div>
+          <div>
+            <h3><a href="https://adsnord.com/tools/ppc-performance-dashboard" data-cta="card-title" data-tool="ppc-performance-dashboard">PPC Performance Dashboard</a></h3>
+            <p class="benefit">See the metrics that connect spend to profit—then pinpoint what to fix first for scalable PPC growth.</p>
+          </div>
+        </div>
+        <p class="output"><strong>Output:</strong> KPI clarity and performance view for faster decisions.</p>
+        <p class="soft-cta">Best for: performance visibility, reporting, and scaling decisions.</p>
+        <div class="actions">
+          <a class="link" href="https://adsnord.com/tools/ppc-performance-dashboard" data-cta="secondary" data-tool="ppc-performance-dashboard">View tool →</a>
+          <a class="btn" href="https://adsnord.com/tools/ppc-performance-dashboard#start" data-cta="primary" data-tool="ppc-performance-dashboard">View Performance →</a>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">🧩</div>
+          <div>
+            <h3><a href="https://adsnord.com/tools/landing-page-behavior-analysis" data-cta="card-title" data-tool="landing-page-behavior-analysis">Landing Page Behavior Analysis</a></h3>
+            <p class="benefit">Find conversion friction: messaging mismatch, trust gaps, speed issues, and flow blockers from paid traffic.</p>
+          </div>
+        </div>
+        <p class="output"><strong>Output:</strong> friction checklist and conversion improvement recommendations.</p>
+        <p class="soft-cta">Best for: conversion rate optimization and landing page improvements.</p>
+        <div class="actions">
+          <a class="link" href="https://adsnord.com/tools/landing-page-behavior-analysis" data-cta="secondary" data-tool="landing-page-behavior-analysis">View tool →</a>
+          <a class="btn" href="https://adsnord.com/tools/landing-page-behavior-analysis#start" data-cta="primary" data-tool="landing-page-behavior-analysis">Analyze Page →</a>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">🧠</div>
+          <div>
+            <h3><a href="https://adsnord.com/tools/ai-google-ads-self-audit" data-cta="card-title" data-tool="ai-google-ads-self-audit">AI Google Ads Self Audit</a></h3>
+            <p class="benefit">Answer a few questions and get a clear, actionable Google Ads audit summary you can apply immediately.</p>
+          </div>
+        </div>
+        <p class="output"><strong>Output:</strong> audit summary and prioritized action plan.</p>
+        <p class="soft-cta">Best for: structured self-audits and improving account fundamentals.</p>
+        <div class="actions">
+          <a class="link" href="https://adsnord.com/tools/ai-google-ads-self-audit" data-cta="secondary" data-tool="ai-google-ads-self-audit">View tool →</a>
+          <a class="btn" href="https://adsnord.com/tools/ai-google-ads-self-audit#start" data-cta="primary" data-tool="ai-google-ads-self-audit">Start Free Audit →</a>
+        </div>
+      </article>
+    </main>
+
+    <!-- NEW: How-to section (word count + SEO + UX) -->
+    <section class="howto" aria-label="How to use these tools">
+      <h2>How to Use These Free Google Ads Tools Effectively</h2>
+      <p class="section-note" style="margin:0;">
+        If you want results quickly, treat this page like a short PPC workflow. Start with a fast audit signal, then fix the biggest cost leaks,
+        and finally improve conversion efficiency. This approach works well for SMBs and eCommerce brands looking for practical Google Ads optimization.
+      </p>
+      <ul>
+        <li><strong>Start with Campaign Health Score</strong> to spot tracking gaps, structure issues, and PPC efficiency red flags.</li>
+        <li><strong>Clean up keywords</strong> using Keyword Analyzer to remove low-intent traffic and reduce wasted ad spend.</li>
+        <li><strong>Improve conversions</strong> with Landing Page Behavior Analysis, then refresh messaging using the AI Ad Copy Generator.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <h2 style="margin-top:24px;">Frequently Asked Questions</h2>
+    <p class="section-note">
+      Quick answers about how these free Google Ads tools work, who they’re for, and how to use them to improve PPC performance.
+    </p>
+
+    <section class="faq" aria-label="Tools FAQ">
+      <details>
+        <summary>Are these Google Ads tools really free? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          Yes. All tools listed on this page are free to use. They’re designed to help you analyze keywords, run PPC audits, improve performance, and reduce wasted ad spend with clear outputs.
+        </div>
+      </details>
+
+      <details>
+        <summary>Do I need to connect my Google Ads account? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          Most tools work from basic inputs (keywords, landing page URL, performance numbers, or campaign details). If optional data connection is added later, it should remain clearly optional.
+        </div>
+      </details>
+
+      <details>
+        <summary>Who are these PPC tools for? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          Built for SMBs, local businesses, eCommerce brands, and marketers who want faster clarity on what to fix in Google Ads campaigns, keywords, ad copy, and landing pages.
+        </div>
+      </details>
+
+      <details>
+        <summary>Which tool should I start with first? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          Start with <a class="link" href="https://adsnord.com/tools/campaign-health-score" data-cta="faq-link" data-tool="campaign-health-score">Campaign Health Score</a> for a fast overview.
+          If conversions are low, use <a class="link" href="https://adsnord.com/tools/landing-page-behavior-analysis" data-cta="faq-link" data-tool="landing-page-behavior-analysis">Landing Page Behavior Analysis</a>.
+          For relevance and wasted spend, begin with <a class="link" href="https://adsnord.com/tools/keyword-analyzer" data-cta="faq-link" data-tool="keyword-analyzer">Keyword Analyzer</a>.
+        </div>
+      </details>
+
+      <details>
+        <summary>Can these tools replace a full Google Ads audit? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          They highlight issues quickly. A full audit usually goes deeper into account architecture, tracking reliability, bidding strategy, creative testing, and landing page conversion flow.
+        </div>
+      </details>
+    </section>
+
+    <!-- Resources -->
+    <section class="resources" aria-label="More resources">
+      <h2>More resources</h2>
+      <p>
+        Want to go deeper beyond these free Google Ads tools? Explore AdsNord services, learn more about our approach, or contact us.
+        For official guidance, we also recommend an authority reference below.
+      </p>
+      <div class="row">
+        <a class="reslink" href="https://adsnord.com/services/" data-cta="internal" data-dest="services">
+          Google Ads Services <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="reslink" href="https://adsnord.com/about/" data-cta="internal" data-dest="about">
+          About AdsNord <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="reslink" href="https://adsnord.com/contact/" data-cta="internal" data-dest="contact">
+          Contact <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="reslink"
+           href="https://support.google.com/google-ads/"
+           target="_blank"
+           rel="noopener noreferrer"
+           data-cta="external"
+           data-dest="google-ads-help">
+          Google Ads Help Center <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== JSON-LD Schema ===== -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"CollectionPage",
+      "name":"Free Google Ads Tools for PPC Analysis & Optimization | AdsNord",
+      "url":"https://adsnord.com/tools",
+      "isPartOf":{"@type":"WebSite","name":"AdsNord","url":"https://adsnord.com"},
+      "about":["Free Google Ads Tools","Google Ads Optimization","PPC Audit","Keyword Analysis","PPC Performance","Landing Page Conversion"],
+      "hasPart":[
+        {"@type":"SoftwareApplication","name":"Keyword Analyzer","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://adsnord.com/tools/keyword-analyzer","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+        {"@type":"SoftwareApplication","name":"Campaign Health Score","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://adsnord.com/tools/campaign-health-score","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+        {"@type":"SoftwareApplication","name":"AI Ad Copy Generator","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://adsnord.com/tools/ai-ad-copy-generator","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+        {"@type":"SoftwareApplication","name":"PPC Performance Dashboard","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://adsnord.com/tools/ppc-performance-dashboard","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+        {"@type":"SoftwareApplication","name":"Landing Page Behavior Analysis","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://adsnord.com/tools/landing-page-behavior-analysis","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+        {"@type":"SoftwareApplication","name":"AI Google Ads Self Audit","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://adsnord.com/tools/ai-google-ads-self-audit","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Are these Google Ads tools really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tools listed on this page are free to use and designed to help you analyze keywords, run PPC audits, improve performance, and reduce wasted ad spend with clear outputs."}},
+        {"@type":"Question","name":"Do I need to connect my Google Ads account?","acceptedAnswer":{"@type":"Answer","text":"Most tools work from basic inputs (keywords, landing page URL, performance numbers, or campaign details). If optional data connection is added later, it should remain clearly optional."}},
+        {"@type":"Question","name":"Who are these PPC tools for?","acceptedAnswer":{"@type":"Answer","text":"Built for SMBs, local businesses, eCommerce brands, and marketers who want faster clarity on what to fix in Google Ads campaigns, keywords, ad copy, and landing pages."}},
+        {"@type":"Question","name":"Which tool should I start with first?","acceptedAnswer":{"@type":"Answer","text":"Start with Campaign Health Score for a fast overview. If conversions are low, use Landing Page Behavior Analysis. For relevance and wasted spend, begin with Keyword Analyzer."}},
+        {"@type":"Question","name":"Can these tools replace a full Google Ads audit?","acceptedAnswer":{"@type":"Answer","text":"They highlight issues quickly. A full audit usually goes deeper into account architecture, tracking reliability, bidding strategy, creative testing, and landing page conversion flow."}}
+      ]
+    }
+    </script>
+  </div>
+</section>

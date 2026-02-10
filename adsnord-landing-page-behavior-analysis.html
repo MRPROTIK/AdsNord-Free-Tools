@@ -1,0 +1,360 @@
+<!-- AdsNord Tool Page #4 (Same template as Tool #1) -->
+<!-- URL: https://adsnord.com/tools/landing-page-behavior-analysis -->
+
+<section class="adsnord-tool" id="adsnord-landing-page-behavior-analysis" aria-label="AdsNord Landing Page Behavior Analysis Tool Page">
+  <!-- Optional (put in <head> if possible)
+  <title>Landing Page Behavior Analysis (Free CRO Tool) | AdsNord</title>
+  <meta name="description" content="Use AdsNord’s free Landing Page Behavior Analysis tool to spot friction that kills conversions: drop-offs, scroll depth issues, weak above-the-fold messaging, and CTA problems." />
+  <link rel="canonical" href="https://adsnord.com/tools/landing-page-behavior-analysis" />
+  -->
+
+  <style>
+    .adsnord-tool, .adsnord-tool *{ box-sizing: border-box; }
+    .adsnord-tool img{ max-width: 100%; height: auto; }
+    .adsnord-tool p, .adsnord-tool li, .adsnord-tool a{ overflow-wrap: anywhere; word-break: break-word; }
+
+    .adsnord-tool{
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.72);
+      --border:rgba(11,18,32,.10);
+      --card:rgba(255,255,255,.80);
+      --shadow:0 10px 26px rgba(11,18,32,.08);
+      --accent:#2563eb;
+
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(900px 420px at 18% -10%, rgba(37,99,235,.12), transparent 55%),
+                  radial-gradient(860px 420px at 88% 0%, rgba(168,85,247,.10), transparent 55%),
+                  linear-gradient(135deg, #EAF2FF, #F7EEFF);
+      padding: 26px 14px 44px;
+    }
+
+    .adsnord-tool .wrap{ max-width: 920px; margin: 0 auto; }
+
+    .adsnord-tool .hero{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      backdrop-filter: blur(6px);
+    }
+
+    .adsnord-tool .eyebrow{
+      margin: 0 0 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(11,18,32,.62);
+    }
+    .adsnord-tool .dot{
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(37,99,235,.10);
+    }
+
+    .adsnord-tool h1{
+      margin: 0 0 10px;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .adsnord-tool .intro{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 78ch;
+    }
+
+    .adsnord-tool .grid{
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .adsnord-tool .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+      backdrop-filter: blur(6px);
+    }
+
+    .adsnord-tool h2{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .adsnord-tool p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .adsnord-tool ul{
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .adsnord-tool li{ margin: 6px 0; }
+
+    .adsnord-tool .cta{
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .adsnord-tool .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(37,99,235,.30);
+      background: linear-gradient(180deg, rgba(37,99,235,.16), rgba(37,99,235,.08));
+      color: rgba(11,18,32,.92);
+      font-weight: 900;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .adsnord-tool .btn:hover{ border-color: rgba(37,99,235,.45); }
+
+    .adsnord-tool .muted-link{
+      display: inline-flex;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.70);
+      color: rgba(11,18,32,.78);
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .adsnord-tool .muted-link:hover{ border-color: rgba(37,99,235,.28); }
+
+    /* FAQ (no JS) */
+    .adsnord-tool details{
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: #fff;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .adsnord-tool summary{
+      cursor: pointer;
+      list-style: none;
+      padding: 12px 12px;
+      font-weight: 900;
+      font-size: 14px;
+      color: rgba(11,18,32,.92);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .adsnord-tool summary::-webkit-details-marker{ display:none; }
+    .adsnord-tool .chev{
+      width: 22px; height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(37,99,235,.22);
+      background: rgba(37,99,235,.08);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      color: rgba(11,18,32,.85);
+      transform: rotate(0deg);
+      transition: transform .18s ease;
+      flex: 0 0 auto;
+    }
+    .adsnord-tool details[open] .chev{ transform: rotate(180deg); }
+
+    .adsnord-tool .faq-body{
+      padding: 0 12px 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* Links footer */
+    .adsnord-tool .links{
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .adsnord-tool .links a{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.75);
+      color: rgba(11,18,32,.86);
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .adsnord-tool .links a:hover{ border-color: rgba(37,99,235,.28); }
+
+    .adsnord-tool a:focus-visible,
+    .adsnord-tool summary:focus-visible{
+      outline: 3px solid rgba(37,99,235,.35);
+      outline-offset: 3px;
+      border-radius: 14px;
+    }
+
+    @media (min-width: 760px){
+      .adsnord-tool{ padding: 34px 18px 58px; }
+      .adsnord-tool .hero{ padding: 20px; }
+      .adsnord-tool h1{ font-size: 34px; }
+      .adsnord-tool .grid{ grid-template-columns: 1fr 1fr; }
+      .adsnord-tool .cta{ flex-direction: row; justify-content: flex-start; align-items: center; }
+      .adsnord-tool .btn{ width: auto; }
+      .adsnord-tool .muted-link{ width: auto; }
+    }
+  </style>
+
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>FREE CRO + PPC TOOL</p>
+      <h1>Landing Page Behavior Analysis</h1>
+      <p class="intro">
+        Find the friction that kills conversions. This landing page behavior analysis tool helps you diagnose drop-offs,
+        weak above-the-fold messaging, unclear CTAs, and mismatch between your ads and page intent—so you can fix what matters first.
+      </p>
+
+      <div class="cta" aria-label="Primary actions">
+        <a class="btn" href="#start" data-cta="primary" data-tool="landing-page-behavior-analysis">Start Behavior Analysis →</a>
+        <a class="muted-link" href="https://adsnord.com/tools" data-cta="internal" data-dest="tools-hub">Back to Free Tools Hub →</a>
+      </div>
+    </header>
+
+    <div class="grid" aria-label="Tool details">
+      <section class="card" aria-label="How it works">
+        <h2>How this tool works</h2>
+        <p>Review behavior signals to locate where users get stuck or leave.</p>
+        <ul>
+          <li><strong>Add your landing page URL</strong> (or paste key sections) and select your goal.</li>
+          <li><strong>Identify friction points</strong> like weak intent match, confusing layout, and CTA placement issues.</li>
+          <li><strong>Get prioritized fixes</strong> you can apply without redesigning the entire page.</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-label="What you get">
+        <h2>What you get</h2>
+        <p>Outputs designed to improve conversion quality and reduce wasted ad spend.</p>
+        <ul>
+          <li><strong>Friction checklist</strong> for above-the-fold clarity, proof, and CTA visibility.</li>
+          <li><strong>Behavior insights</strong> such as drop-off points, scroll depth issues, and confusion signals.</li>
+          <li><strong>Action plan</strong> with quick fixes + higher-impact tests (copy, layout, trust, speed).</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- START SECTION (anchor target for CTA) -->
+    <section class="card" id="start" aria-label="Start landing page analysis">
+      <h2>Start landing page analysis</h2>
+      <p>
+        Add your landing page details below to generate a friction report. Start with one page and one conversion goal
+        (lead form, call, purchase) for the clearest recommendations.
+      </p>
+
+      <!-- Placeholder form area (replace with your real tool UI / shortcode) -->
+      <div style="margin-top:12px; padding:12px; border:1px dashed rgba(11,18,32,.18); border-radius:14px; background: rgba(255,255,255,.65);">
+        <p style="margin:0; color: rgba(11,18,32,.70); font-size:14px; line-height:1.6;">
+          <strong>Tool UI placeholder:</strong> Insert your Elementor form, shortcode, or tool embed here.
+          <br />
+          Suggested inputs: Landing page URL, Goal (lead/call/sale), Offer summary, Audience, Top traffic source.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ (2–3 max) -->
+    <section class="card" aria-label="Landing Page Behavior Analysis FAQ">
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>What is “landing page friction”? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          Friction is anything that slows down or confuses users—unclear offer, weak proof, too many steps, poor mobile layout,
+          slow loading, or a CTA that isn’t obvious.
+        </div>
+      </details>
+
+      <details>
+        <summary>What should I fix first to improve conversions quickly? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          Start with above-the-fold clarity: a clear promise, who it’s for, one primary CTA, and 1–2 proof points (reviews, results, guarantees).
+          Then reduce distractions and make the next step easy on mobile.
+        </div>
+      </details>
+
+      <details>
+        <summary>Will this also help reduce Google Ads wasted spend? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          Yes. Better intent match and stronger conversion flow means more conversions from the same clicks—so you waste less budget on users who bounce.
+        </div>
+      </details>
+
+      <div class="links" aria-label="Helpful links">
+        <!-- Internal links -->
+        <a href="https://adsnord.com/tools" data-cta="internal" data-dest="tools-hub">Free Tools Hub →</a>
+        <a href="https://adsnord.com/services/" data-cta="internal" data-dest="services">Google Ads Services →</a>
+
+        <!-- Optional external authority link (1 max) -->
+        <a href="https://support.google.com/google-ads/" target="_blank" rel="noopener noreferrer"
+           data-cta="external" data-dest="google-ads-help">Google Ads Help Center ↗</a>
+      </div>
+    </section>
+
+    <!-- Lightweight JSON-LD (Tool page + FAQ) -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebPage",
+      "name":"Landing Page Behavior Analysis | AdsNord",
+      "url":"https://adsnord.com/tools/landing-page-behavior-analysis",
+      "isPartOf":{"@type":"WebSite","name":"AdsNord","url":"https://adsnord.com"},
+      "about":["Landing page analysis","Conversion rate optimization","Google Ads conversion quality"],
+      "mainEntity":{
+        "@type":"SoftwareApplication",
+        "name":"Landing Page Behavior Analysis",
+        "applicationCategory":"BusinessApplication",
+        "operatingSystem":"Web",
+        "url":"https://adsnord.com/tools/landing-page-behavior-analysis",
+        "isAccessibleForFree":true,
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"What is “landing page friction”?","acceptedAnswer":{"@type":"Answer","text":"Friction is anything that slows down or confuses users—unclear offer, weak proof, too many steps, poor mobile layout, slow loading, or a CTA that isn’t obvious."}},
+        {"@type":"Question","name":"What should I fix first to improve conversions quickly?","acceptedAnswer":{"@type":"Answer","text":"Start with above-the-fold clarity: a clear promise, who it’s for, one primary CTA, and 1–2 proof points (reviews, results, guarantees). Then reduce distractions and make the next step easy on mobile."}},
+        {"@type":"Question","name":"Will this also help reduce Google Ads wasted spend?","acceptedAnswer":{"@type":"Answer","text":"Yes. Better intent match and stronger conversion flow means more conversions from the same clicks—so you waste less budget on users who bounce."}}
+      ]
+    }
+    </script>
+  </div>
+</section>
