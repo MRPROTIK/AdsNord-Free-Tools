@@ -3,12 +3,14 @@
 
 <section class="adsnord-tool" id="adsnord-keyword-analyzer" aria-label="AdsNord Keyword Analyzer Tool Page">
   <!-- Optional (put in <head> if possible)
-  <title>Keyword Analyzer (Free Google Ads Tool) | AdsNord</title>
-  <meta name="description" content="Use AdsNord’s free Keyword Analyzer to spot low-intent keywords, overlap, and wasted spend signals. Get cleanup suggestions to improve Google Ads performance." />
+  <title>Free Google Ads Keyword Analyzer (Intent + Funnel Signals) | AdsNord</title>
+  <meta name="description" content="Use our free Google Ads keyword analyzer to generate PPC keyword ideas with intent + funnel signals (TOFU/MOFU/BOFU). Fast, no login." />
   <link rel="canonical" href="https://adsnord.com/tools/keyword-analyzer" />
   -->
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+
     .adsnord-tool, .adsnord-tool *{ box-sizing: border-box; }
     .adsnord-tool img{ max-width: 100%; height: auto; }
     .adsnord-tool p, .adsnord-tool li, .adsnord-tool a{ overflow-wrap: anywhere; word-break: break-word; }
@@ -20,13 +22,15 @@
       --card:rgba(255,255,255,.80);
       --shadow:0 10px 26px rgba(11,18,32,.08);
       --accent:#2563eb;
+      --good:#0ea5e9;
+      --warn:#a855f7;
 
       color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background: radial-gradient(900px 420px at 18% -10%, rgba(37,99,235,.12), transparent 55%),
                   radial-gradient(860px 420px at 88% 0%, rgba(168,85,247,.10), transparent 55%),
                   linear-gradient(135deg, #EAF2FF, #F7EEFF);
-      padding: 26px 14px 44px;
+      padding: 28px 14px 48px;
     }
 
     .adsnord-tool .wrap{ max-width: 920px; margin: 0 auto; }
@@ -36,12 +40,12 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       box-shadow: var(--shadow);
-      padding: 16px;
+      padding: 18px;
       backdrop-filter: blur(6px);
     }
 
     .adsnord-tool .eyebrow{
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -57,22 +61,22 @@
     }
 
     .adsnord-tool h1{
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       font-size: 26px;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
     }
 
     .adsnord-tool .intro{
       margin: 0;
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.7;
       max-width: 78ch;
     }
 
     .adsnord-tool .grid{
-      margin-top: 14px;
+      margin-top: 16px;
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
@@ -83,34 +87,37 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       box-shadow: var(--shadow);
-      padding: 14px;
+      padding: 16px;
       backdrop-filter: blur(6px);
     }
 
     .adsnord-tool h2{
-      margin: 0 0 8px;
+      margin: 0 0 10px;
       font-size: 16px;
       letter-spacing: -0.01em;
+      line-height: 1.25;
     }
 
     .adsnord-tool p{
       margin: 0;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.65;
+      line-height: 1.75;
     }
 
+    .adsnord-tool .card > p{ margin-top: 6px; }
+
     .adsnord-tool ul{
-      margin: 10px 0 0;
+      margin: 12px 0 0;
       padding: 0 0 0 18px;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
-    .adsnord-tool li{ margin: 6px 0; }
+    .adsnord-tool li{ margin: 7px 0; }
 
     .adsnord-tool .cta{
-      margin-top: 14px;
+      margin-top: 16px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -146,6 +153,214 @@
       text-decoration: none;
     }
     .adsnord-tool .muted-link:hover{ border-color: rgba(37,99,235,.28); }
+
+    /* Tool UI */
+    .adsnord-tool .tool-ui{
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,.78);
+    }
+
+    .adsnord-tool .form-grid{
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+      margin-top: 12px;
+    }
+
+    .adsnord-tool label{
+      display:block;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(11,18,32,.62);
+      margin-bottom: 7px;
+      font-weight: 900;
+    }
+
+    .adsnord-tool input[type="text"],
+    .adsnord-tool select{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.16);
+      background: rgba(255,255,255,.92);
+      color: rgba(11,18,32,.92);
+      font-size: 14px;
+      font-weight: 700;
+      outline: none;
+    }
+    .adsnord-tool input[type="text"]:focus,
+    .adsnord-tool select:focus{
+      border-color: rgba(37,99,235,.55);
+      box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+    }
+
+    .adsnord-tool .helper{
+      margin-top: 7px;
+      color: rgba(11,18,32,.62);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .adsnord-tool .actions{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+    .adsnord-tool .action-btn{
+      cursor: pointer;
+      display: inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(37,99,235,.30);
+      background: linear-gradient(180deg, rgba(37,99,235,.16), rgba(37,99,235,.08));
+      color: rgba(11,18,32,.92);
+      font-weight: 900;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .adsnord-tool .action-btn[disabled]{
+      opacity:.65;
+      cursor:not-allowed;
+    }
+
+    .adsnord-tool .ghost-btn{
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.12);
+      background: rgba(255,255,255,.85);
+      color: rgba(11,18,32,.82);
+      font-weight: 900;
+      font-size: 13px;
+      width: 100%;
+    }
+
+    .adsnord-tool .status{
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.85);
+      color: rgba(11,18,32,.80);
+      font-size: 13px;
+      line-height: 1.7;
+      display:none;
+    }
+    .adsnord-tool .status.show{ display:block; }
+    .adsnord-tool .status.ok{ border-color: rgba(14,165,233,.28); }
+    .adsnord-tool .status.err{ border-color: rgba(239,68,68,.30); }
+
+    .adsnord-tool .result-head{
+      margin-top: 14px;
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .adsnord-tool .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(37,99,235,.22);
+      background: rgba(37,99,235,.08);
+      color: rgba(11,18,32,.86);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .adsnord-tool .table-wrap{
+      margin-top: 12px;
+      overflow: auto;
+      border-radius: 16px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.88);
+      -webkit-overflow-scrolling: touch;
+    }
+    .adsnord-tool table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 920px;
+    }
+    .adsnord-tool th, .adsnord-tool td{
+      text-align: left;
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(11,18,32,.08);
+      font-size: 13px;
+      line-height: 1.5;
+      vertical-align: top;
+    }
+    .adsnord-tool th{
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,.98);
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: rgba(11,18,32,.62);
+      font-weight: 900;
+      z-index: 1;
+    }
+    .adsnord-tool .pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.92);
+      font-weight: 900;
+      font-size: 12px;
+      color: rgba(11,18,32,.82);
+      white-space: nowrap;
+    }
+    .adsnord-tool .pill.blue{ border-color: rgba(37,99,235,.24); background: rgba(37,99,235,.08); }
+    .adsnord-tool .pill.purple{ border-color: rgba(168,85,247,.22); background: rgba(168,85,247,.08); }
+    .adsnord-tool .pill.gray{ border-color: rgba(11,18,32,.14); background: rgba(11,18,32,.04); }
+
+    .adsnord-tool .copy-mini{
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(11,18,32,.12);
+      background: rgba(255,255,255,.92);
+      font-weight: 900;
+      font-size: 12px;
+      color: rgba(11,18,32,.82);
+      white-space: nowrap;
+    }
+    .adsnord-tool .copy-mini:hover{ border-color: rgba(37,99,235,.28); }
+
+    .adsnord-tool .disclaimer{
+      margin-top: 14px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(11,18,32,.18);
+      background: rgba(255,255,255,.72);
+      color: rgba(11,18,32,.72);
+      font-size: 13px;
+      line-height: 1.7;
+    }
 
     /* FAQ (no JS) */
     .adsnord-tool details{
@@ -187,7 +402,7 @@
       padding: 0 12px 12px;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.65;
+      line-height: 1.75;
     }
 
     /* Links footer */
@@ -214,31 +429,289 @@
     .adsnord-tool .links a:hover{ border-color: rgba(37,99,235,.28); }
 
     .adsnord-tool a:focus-visible,
-    .adsnord-tool summary:focus-visible{
+    .adsnord-tool summary:focus-visible,
+    .adsnord-tool button:focus-visible,
+    .adsnord-tool input:focus-visible,
+    .adsnord-tool select:focus-visible{
       outline: 3px solid rgba(37,99,235,.35);
       outline-offset: 3px;
       border-radius: 14px;
     }
 
     @media (min-width: 760px){
-      .adsnord-tool{ padding: 34px 18px 58px; }
-      .adsnord-tool .hero{ padding: 20px; }
+      .adsnord-tool{ padding: 38px 18px 62px; }
+      .adsnord-tool .hero{ padding: 22px; }
       .adsnord-tool h1{ font-size: 34px; }
       .adsnord-tool .grid{ grid-template-columns: 1fr 1fr; }
       .adsnord-tool .cta{ flex-direction: row; justify-content: flex-start; align-items: center; }
       .adsnord-tool .btn{ width: auto; }
       .adsnord-tool .muted-link{ width: auto; }
+
+      .adsnord-tool .form-grid{
+        grid-template-columns: 1.2fr 1fr 1fr;
+        align-items: end;
+        gap: 12px;
+      }
+      .adsnord-tool .actions{
+        flex-direction: row;
+        align-items: center;
+      }
+      .adsnord-tool .action-btn,
+      .adsnord-tool .ghost-btn{
+        width: auto;
+      }
+      .adsnord-tool .result-head{
+        flex-direction: row;
+        align-items: center;
+      }
     }
+
+    /* ===== Trust strip (Hero) ===== */
+    .adsnord-tool .trust-strip{ margin-top: 12px; display:flex; flex-wrap:wrap; gap:10px; }
+    .adsnord-tool .trust-pill{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 8px 10px; border-radius:999px;
+      border:1px solid rgba(11,18,32,.10);
+      background:rgba(255,255,255,.72);
+      font-weight:900; font-size:12px; color: rgba(11,18,32,.75);
+    }
+
+    /* ✅ Mobile: compact form (label + field one line) */
+    @media (max-width: 520px){
+      .adsnord-tool .form-grid > div{
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 10px;
+        align-items: center;
+      }
+      .adsnord-tool .form-grid label{
+        margin: 0;
+        font-size: 11px;
+        letter-spacing: .10em;
+        white-space: nowrap;
+      }
+      .adsnord-tool .form-grid .helper{
+        grid-column: 1 / -1;
+        margin-top: 6px;
+      }
+      .adsnord-tool input[type="text"],
+      .adsnord-tool select{
+        padding: 11px 12px;
+      }
+    }
+
+    /* ✅ Premium loading spinner */
+    .adsnord-tool .spinner{
+      width:14px; height:14px; border-radius:999px;
+      border:2px solid rgba(11,18,32,.25);
+      border-top-color: rgba(37,99,235,.85);
+      animation: adsnordSpin .7s linear infinite;
+    }
+    @keyframes adsnordSpin{ to{ transform: rotate(360deg); } }
+
+    /* Sticky analyze button (mobile conversion boost) */
+    @media (max-width: 520px){
+      .adsnord-tool .action-btn{ position: sticky; bottom: 12px; z-index: 5; }
+    }
+
+    /* =========================================================
+       ✅ OVERLAP FIX + NEXT CTA UI (Theme-safe, scoped)
+       Reason: h3/paragraph styles were not defined, so theme overrides caused stacking/overlap
+       ========================================================= */
+
+    /* Normalize headings inside tool (prevents theme negative margins / huge line-height) */
+    .adsnord-tool h3{
+      margin: 14px 0 10px !important;
+      font-size: 18px !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.02em !important;
+      color: rgba(11,18,32,.96) !important;
+      font-weight: 900 !important;
+    }
+
+    .adsnord-tool ol{
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .adsnord-tool ol li{ margin: 8px 0; }
+
+    /* Next steps block spacing */
+    .adsnord-tool .next-steps{
+      margin-top: 14px;
+      padding-top: 2px;
+    }
+
+    /* WhatsApp lead box */
+    .adsnord-tool .lead-box{
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(37,99,235,.20);
+      background: rgba(37,99,235,.06);
+    }
+    .adsnord-tool .lead-box p{
+      margin: 0 0 10px !important;
+      color: rgba(11,18,32,.78) !important;
+      line-height: 1.7 !important;
+    }
+    .adsnord-tool .lead-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(37,99,235,.30);
+      background: linear-gradient(180deg, rgba(37,99,235,.16), rgba(37,99,235,.08));
+      color: rgba(11,18,32,.92);
+      font-weight: 900;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .adsnord-tool .lead-btn:hover{ border-color: rgba(37,99,235,.45); }
+
+    @media (min-width: 760px){
+      .adsnord-tool .lead-btn{ width: auto; }
+    }
+
+    /* Next CTA card (the one that was overlapping) */
+    .adsnord-tool .next-cta{
+      margin-top: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      overflow: hidden;
+    }
+
+    .adsnord-tool .next-cta-top{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .adsnord-tool .next-kicker{
+      display: block !important;
+      margin: 0 0 6px !important;
+      font-size: 12px !important;
+      letter-spacing: .12em !important;
+      text-transform: uppercase !important;
+      color: rgba(11,18,32,.62) !important;
+      font-weight: 900 !important;
+      line-height: 1.2 !important;
+      position: relative !important;
+      z-index: 1 !important;
+    }
+
+    .adsnord-tool .next-title{
+      margin: 0 0 8px !important; /* ✅ critical: prevents overlap with kicker */
+      font-size: 22px !important;
+      line-height: 1.15 !important;
+      letter-spacing: -0.03em !important;
+      color: rgba(11,18,32,.96) !important;
+      font-weight: 900 !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+
+    .adsnord-tool .next-sub{
+      margin: 0 !important;
+      color: rgba(11,18,32,.74) !important;
+      font-size: 14px !important;
+      line-height: 1.75 !important;
+      max-width: 70ch;
+    }
+
+    .adsnord-tool .next-badges{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .adsnord-tool .next-actions{
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .adsnord-tool .next-primary{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(37,99,235,.30);
+      background: linear-gradient(180deg, rgba(37,99,235,.16), rgba(37,99,235,.08));
+      color: rgba(11,18,32,.92);
+      font-weight: 900;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    .adsnord-tool .next-secondary{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .adsnord-tool .next-secondary a{
+      flex: 1 1 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: rgba(255,255,255,.75);
+      color: rgba(11,18,32,.86);
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .adsnord-tool .next-secondary a:hover{ border-color: rgba(37,99,235,.28); }
+
+    @media (min-width: 760px){
+      .adsnord-tool .next-cta-top{
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .adsnord-tool .next-primary{ width: auto; }
+      .adsnord-tool .next-title{ font-size: 24px !important; }
+    }
+
+    /* ✅ Extra protection: if any theme applies weird line-heights to headings/paragraphs */
+    .adsnord-tool .next-cta *{ max-width: 100%; }
   </style>
 
   <div class="wrap">
     <header class="hero">
       <p class="eyebrow"><span class="dot" aria-hidden="true"></span>FREE GOOGLE ADS TOOL</p>
-      <h1>Keyword Analyzer for Google Ads</h1>
+
+      <!-- ✅ H1 updated with Primary Keyword -->
+      <h1>Free Google Ads Keyword Analyzer</h1>
+
+      <!-- ✅ Hero intro enhanced (SEO + intent match) -->
       <p class="intro">
-        Use this free Google Ads keyword analysis tool to spot low-intent traffic, overlapping terms, and wasted spend signals.
-        Get clear cleanup suggestions so you can improve relevance, reduce PPC cost, and protect conversion quality.
+        Generate high-quality PPC keyword ideas with AI-estimated intent + funnel signals (TOFU, MOFU, BOFU).
+        No paid data providers. Fast, clean, copy-ready output.
       </p>
+
+      <div class="trust-strip" aria-label="Trust indicators">
+        <span class="trust-pill">No login needed</span>
+        <span class="trust-pill">Instant results</span>
+        <span class="trust-pill">No saved user data</span>
+      </div>
 
       <div class="cta" aria-label="Primary actions">
         <a class="btn" href="#start" data-cta="primary" data-tool="keyword-analyzer">Start Keyword Analysis →</a>
@@ -246,88 +719,495 @@
       </div>
     </header>
 
+    <!-- ✅ START SECTION moved directly after Hero (conversion boost) -->
+    <section class="card" id="start" aria-label="Start keyword analysis">
+      <h2>Start keyword analysis</h2>
+      <p>
+        Use this <strong>Google Ads keyword tool</strong> to generate keyword ideas and classify intent (informational, commercial, transactional).
+        Pick a business type + goal to get five copy-ready keywords with funnel-stage guidance.
+      </p>
+
+      <div class="tool-ui" aria-label="Keyword Analyzer Inputs">
+        <div class="form-grid">
+          <div>
+            <label for="an_kw">Mother keyword</label>
+            <input id="an_kw" type="text" placeholder="e.g. google ads agency" autocomplete="off" />
+            <div class="helper">Tip: Keep it specific. “google ads agency” beats “marketing”.</div>
+          </div>
+
+          <div>
+            <label for="an_business">Business type</label>
+            <select id="an_business">
+              <option value="" selected disabled>Select one</option>
+              <option value="ecom_physical">eCommerce (Physical Products)</option>
+              <option value="ecom_digital">eCommerce (Digital Products)</option>
+              <option value="local_service">Local Business (Service-based)</option>
+              <option value="local_store">Local Business (Storefront)</option>
+              <option value="b2b_service">B2B Service</option>
+              <option value="b2c_service">B2C Service</option>
+              <option value="saas">SaaS / Software</option>
+              <option value="agency">Agency / Marketing</option>
+              <option value="healthcare">Healthcare / Medical</option>
+              <option value="education">Education / Course</option>
+              <option value="real_estate">Real Estate</option>
+              <option value="startup">Startup</option>
+            </select>
+            <div class="helper">Structured inputs = cleaner output.</div>
+          </div>
+
+          <div>
+            <label for="an_goal">Goal</label>
+            <select id="an_goal">
+              <option value="" selected disabled>Select one</option>
+              <option value="leads">Leads</option>
+              <option value="sales">Sales</option>
+              <option value="calls">Calls</option>
+              <option value="awareness">Awareness</option>
+              <option value="consideration">Consideration</option>
+              <option value="retargeting">Retargeting</option>
+              <option value="sales_leads">Sales + Leads</option>
+              <option value="sales_awareness">Sales + Awareness</option>
+              <option value="leads_retargeting">Leads + Retargeting</option>
+            </select>
+            <div class="helper">Pick one strategy focus for best recommendations.</div>
+          </div>
+        </div>
+
+        <div class="actions" aria-label="Tool actions">
+          <button class="action-btn" id="an_btn" type="button">Analyze →</button>
+          <button class="ghost-btn" id="an_copy_all" type="button" style="display:none;">Copy All</button>
+        </div>
+
+        <div class="status" id="an_status" role="status" aria-live="polite"></div>
+
+        <div id="an_results" aria-label="Results" style="margin-top:10px; display:none;">
+          <div class="result-head">
+            <span class="badge" id="an_best_badge">Best pick: —</span>
+            <span class="helper" id="an_meta" style="margin:0;">—</span>
+          </div>
+
+          <div class="table-wrap" aria-label="Keyword table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Keyword</th>
+                  <th>Type</th>
+                  <th>Intent</th>
+                  <th>Funnel</th>
+                  <th>Volume</th>
+                  <th>Competition</th>
+                  <th>Why</th>
+                  <th>Copy</th>
+                </tr>
+              </thead>
+              <tbody id="an_tbody"></tbody>
+            </table>
+          </div>
+
+          <div class="disclaimer">
+            <strong>Note:</strong> These are <strong>AI-estimated</strong> signals (intent/volume/competition). They are directional insights, not guaranteed.
+            Validate with your real campaign data before making high-stakes decisions.
+            <p style="margin-top:10px;color:rgba(11,18,32,.60);font-size:12px;line-height:1.6;">
+              We do not store your inputs. Results are generated on-demand for this session.
+            </p>
+          </div>
+
+          <div class="next-steps" id="nextSteps" style="display:none;">
+            <h3>Next steps (recommended)</h3>
+            <ol>
+              <li>Pick 1 keyword and build a tight ad group (1 theme).</li>
+              <li>Match ad copy to the keyword intent + funnel stage.</li>
+              <li>Use a landing page that matches the promise (message match).</li>
+            </ol>
+
+            <div class="lead-box">
+              <p><strong>Want help implementing this?</strong> Get a quick free Google Ads mini-audit on WhatsApp.</p>
+              <a class="lead-btn" id="an_wa" href="https://wa.me/46764304702" target="_blank" rel="noopener">WhatsApp Free Audit →</a>
+            </div>
+          </div>
+
+          <div class="next-cta" id="an_next_cta" style="display:none;" aria-label="Next step recommendations">
+            <div class="next-cta-top">
+              <div>
+                <p class="next-kicker" id="an_next_kicker">Next step</p>
+                <h3 class="next-title" id="an_next_title">—</h3>
+                <p class="next-sub" id="an_next_sub">—</p>
+              </div>
+              <div class="next-badges" id="an_next_badges" aria-label="Signals"></div>
+            </div>
+
+            <div class="next-actions" aria-label="Recommended actions">
+              <a class="next-primary" id="an_next_primary" href="https://adsnord.com/tools/ai-ad-copy-generator">Generate Ad Copy →</a>
+              <div class="next-secondary">
+                <a id="an_next_campaign" href="https://adsnord.com/tools/campaign-health-score">Check Campaign Health →</a>
+                <a id="an_next_landing" href="https://adsnord.com/tools/landing-page-behavior-analysis">Optimize Landing Page →</a>
+                <a id="an_next_audit" href="https://adsnord.com/tools/ai-google-ads-self-audit">Run AI Self-Audit →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Cards moved below Start section -->
     <div class="grid" aria-label="Tool details">
       <section class="card" aria-label="How it works">
         <h2>How this tool works</h2>
-        <p>Run a fast review of your keyword list to find waste patterns and relevance gaps.</p>
+        <p>Enter one “mother keyword”, then pick business type + goal. You’ll get 5 ready-to-use keywords with strategy signals.</p>
         <ul>
-          <li><strong>Paste keywords</strong> (or upload a list) and choose your market context.</li>
-          <li><strong>Detect waste signals</strong> like low-intent modifiers, duplication, and overlap.</li>
-          <li><strong>Get next steps</strong> including cleanup actions and testing suggestions.</li>
+          <li><strong>3 short-tail</strong> + <strong>2 long-tail</strong> keyword ideas.</li>
+          <li><strong>Intent + funnel stage</strong> tags for better targeting.</li>
+          <li><strong>AI-estimated levels</strong> (volume/competition) with clear reasons.</li>
         </ul>
       </section>
 
       <section class="card" aria-label="What you get">
         <h2>What you get</h2>
-        <p>Outputs designed to help you optimize quickly without overthinking.</p>
+        <p>Copy-ready keywords and quick guidance for structuring ad groups and landing pages.</p>
         <ul>
-          <li><strong>Intent flags</strong> highlighting low-quality or research-only keywords.</li>
-          <li><strong>Overlap warnings</strong> to reduce internal competition and wasted CPC.</li>
-          <li><strong>Cleanup suggestions</strong> for better match types, negatives, and structure.</li>
+          <li><strong>Best pick</strong> recommendation for your next test.</li>
+          <li><strong>Use-case guidance</strong> (service page / product page / blog).</li>
+          <li><strong>One-click copy</strong> for each keyword + copy all.</li>
         </ul>
       </section>
     </div>
 
-    <!-- START SECTION (anchor target for CTA) -->
-    <section class="card" id="start" aria-label="Start keyword analysis">
-      <h2>Start keyword analysis</h2>
+    <!-- ✅ SEO Support Section (250–300 words) -->
+    <section class="card" aria-label="About this Google Ads Keyword Analyzer">
+      <h2>Why Use a Free Google Ads Keyword Analyzer?</h2>
       <p>
-        Add your keyword list below to generate intent flags and cleanup suggestions. Keep it focused—start with one campaign or one theme for the fastest output.
+        A <strong>Free Google Ads Keyword Analyzer</strong> helps advertisers identify high-intent search terms before launching campaigns. Instead of guessing which keywords may convert,
+        this tool evaluates search intent and funnel stage signals (TOFU, MOFU, BOFU) so you can align your ads with real user behavior.
       </p>
-
-      <!-- Placeholder form area (replace with your real tool UI / shortcode) -->
-      <div style="margin-top:12px; padding:12px; border:1px dashed rgba(11,18,32,.18); border-radius:14px; background: rgba(255,255,255,.65);">
-        <p style="margin:0; color: rgba(11,18,32,.70); font-size:14px; line-height:1.6;">
-          <strong>Tool UI placeholder:</strong> Insert your Elementor form, shortcode, or tool embed here.
-        </p>
-      </div>
+      <p>
+        Unlike traditional keyword planners that focus only on volume, this <strong>Google Ads Keyword Intent Tool</strong> looks at structural signals to estimate intent type —
+        informational, commercial, or transactional. That means you can build tighter ad groups, improve message match, and reduce wasted ad spend.
+      </p>
+      <p>
+        For performance marketers and PPC specialists, understanding keyword intent is critical. A transactional BOFU keyword often needs a direct offer and strong call-to-action,
+        while TOFU keywords perform better with educational messaging and awareness-driven copy.
+      </p>
+      <p>
+        By combining keyword structure, intent classification, and funnel targeting, this tool supports smarter Google Ads strategy, stronger Quality Scores, and improved campaign efficiency.
+        Use it to generate actionable keyword ideas, prioritize tests, and build campaigns designed for measurable growth.
+      </p>
     </section>
 
-    <!-- FAQ (2–3 max) -->
+    <!-- FAQ -->
     <section class="card" aria-label="Keyword Analyzer FAQ">
       <h2>FAQ</h2>
 
       <details>
-        <summary>Is this keyword analyzer really free? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <summary>Is this Google Ads keyword tool really free? <span class="chev" aria-hidden="true">⌄</span></summary>
         <div class="faq-body">
-          Yes. This is a free Google Ads tool built to help you review keyword intent and reduce wasted spend signals quickly.
+          Yes. It’s free and designed to generate keyword ideas plus AI-estimated intent and funnel signals. No paid data providers are used in the free version.
         </div>
       </details>
 
       <details>
-        <summary>What should I paste into the tool? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <summary>Are volume and competition real data? <span class="chev" aria-hidden="true">⌄</span></summary>
         <div class="faq-body">
-          Paste keywords from a single campaign or theme first. Cleaner inputs produce clearer intent flags and better cleanup suggestions.
+          No. Volume/competition are AI-estimated levels (High/Medium/Low) to guide prioritization. Always validate with your campaign and market reality.
         </div>
       </details>
 
       <details>
-        <summary>Will this replace a full Google Ads audit? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <summary>What should I do with the “best pick”? <span class="chev" aria-hidden="true">⌄</span></summary>
         <div class="faq-body">
-          It’s a fast diagnostic for keyword waste and overlap. A full audit also reviews tracking, bidding strategy, structure, and landing page conversion flow.
+          Use it as your first test keyword—build a tightly themed ad group, align ad copy to the keyword, and ensure your landing page matches the promise.
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I find high-intent PPC keywords? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          Start by identifying intent. Transactional keywords (BOFU) often include words like “buy”, “price”, “hire”, or “near me”. Use this PPC keyword analyzer to group keywords by intent and funnel stage, then match ad copy and landing pages accordingly.
+        </div>
+      </details>
+
+      <details>
+        <summary>What is a keyword intent analyzer in Google Ads? <span class="chev" aria-hidden="true">⌄</span></summary>
+        <div class="faq-body">
+          A keyword intent analyzer helps you understand whether a searcher is researching (TOFU), comparing options (MOFU), or ready to purchase (BOFU). This makes it easier to choose the right bidding strategy, ad messaging, and landing page angle.
         </div>
       </details>
 
       <div class="links" aria-label="Helpful links">
-        <!-- Internal links -->
         <a href="https://adsnord.com/tools" data-cta="internal" data-dest="tools-hub">Free Tools Hub →</a>
         <a href="https://adsnord.com/services/" data-cta="internal" data-dest="services">Google Ads Services →</a>
-
-        <!-- Optional external authority link (1 max) -->
         <a href="https://support.google.com/google-ads/" target="_blank" rel="noopener noreferrer"
            data-cta="external" data-dest="google-ads-help">Google Ads Help Center ↗</a>
       </div>
     </section>
+
+    <!-- Worker UI logic -->
+    <script>
+      (function(){
+        // ✅ Change only if your worker route differs
+        const WORKER_BASE = "https://new-adsnord-free-tools.md-motiur52.workers.dev";
+        const WORKER_ENDPOINT = WORKER_BASE.replace(/\/+$/,'') + "/keyword-analyzer";
+
+        const elKw = document.getElementById("an_kw");
+        const elBiz = document.getElementById("an_business");
+        const elGoal = document.getElementById("an_goal");
+        const elBtn = document.getElementById("an_btn");
+        const elStatus = document.getElementById("an_status");
+        const elResults = document.getElementById("an_results");
+        const elTbody = document.getElementById("an_tbody");
+        const elBest = document.getElementById("an_best_badge");
+        const elMeta = document.getElementById("an_meta");
+        const elCopyAll = document.getElementById("an_copy_all");
+        const elStart = document.getElementById("start");
+
+        const elNextSteps = document.getElementById("nextSteps");
+        const elWA = document.getElementById("an_wa");
+
+        let lastCopyBlock = "";
+
+        function showStatus(msg, kind){
+          elStatus.className = "status show " + (kind || "");
+          elStatus.textContent = msg || "";
+        }
+        function hideStatus(){
+          elStatus.className = "status";
+          elStatus.textContent = "";
+        }
+        function pill(text, cls){
+          return '<span class="pill '+cls+'">'+text+'</span>';
+        }
+        function esc(s){
+          return (s||"").toString()
+            .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+            .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+        }
+        async function copyText(t){
+          try{
+            await navigator.clipboard.writeText(t);
+            showStatus("Copied to clipboard ✅", "ok");
+            setTimeout(()=>hideStatus(), 1200);
+          }catch(e){
+            showStatus("Copy failed. Please copy manually.", "err");
+          }
+        }
+
+        function buildRow(r){
+          const typePill = r.type === "short_tail" ? pill("Short-tail","blue") : pill("Long-tail","purple");
+
+          const intent = r.intent_type || r.intent || "—";
+          const funnel = r.funnel_stage || "—";
+          const vol = r.volume_level || "—";
+          const comp = r.competition_level || "—";
+          const why = r.reason || r.recommendation || "—";
+
+          const kw = r.keyword || "—";
+          const kwEsc = esc(kw);
+
+          return `
+            <tr>
+              <td data-label="Keyword"><strong>${kwEsc}</strong></td>
+              <td data-label="Type">${typePill}</td>
+              <td data-label="Intent">${pill(esc(intent),"gray")}</td>
+              <td data-label="Funnel">${pill(esc(funnel),"gray")}</td>
+              <td data-label="Volume">${pill(esc(vol),"gray")}</td>
+              <td data-label="Competition">${pill(esc(comp),"gray")}</td>
+              <td data-label="Why">${esc(why)}</td>
+              <td data-label="Copy"><button class="copy-mini" type="button" data-copy="${kwEsc}">Copy</button></td>
+            </tr>
+          `;
+        }
+
+        function validate(){
+          const kw = elKw.value.trim();
+          if (!kw) return "Please enter a mother keyword.";
+          if (!elBiz.value) return "Please select a business type.";
+          if (!elGoal.value) return "Please select a goal.";
+          return "";
+        }
+
+        function smoothScrollToResults(){
+          try{
+            elStart.scrollIntoView({ behavior: "smooth", block: "start" });
+          }catch(e){}
+        }
+
+        function setWhatsAppLink(bestKeyword, funnel, intent){
+          if (!elWA) return;
+          const base = "https://wa.me/46764304702";
+          const msg =
+            "Hi AdsNord! I used the Keyword Analyzer and want a free mini-audit.\n\n" +
+            "Best keyword: " + (bestKeyword || "—") + "\n" +
+            "Funnel: " + (funnel || "—") + "\n" +
+            "Intent: " + (intent || "—") + "\n\n" +
+            "Can you help me build a high-performing campaign from this?";
+          elWA.href = base + "?text=" + encodeURIComponent(msg);
+        }
+
+        async function run(){
+          const err = validate();
+          if (err){
+            showStatus(err, "err");
+            return;
+          }
+
+          const keyword = elKw.value.trim();
+
+          // ✅ Send label text (human readable) not raw value
+          const business = (elBiz.options[elBiz.selectedIndex]?.text || elBiz.value || "").trim();
+          const goal = (elGoal.options[elGoal.selectedIndex]?.text || elGoal.value || "").trim();
+
+          elBtn.disabled = true;
+          elBtn.innerHTML = 'Analyzing <span class="spinner" aria-hidden="true"></span>';
+
+          elResults.style.display = "none";
+          if (elNextSteps) elNextSteps.style.display = "none";
+
+          elCopyAll.style.display = "none";
+          elTbody.innerHTML = "";
+          lastCopyBlock = "";
+          showStatus("Working… generating keyword ideas and signals.", "");
+
+          const url = WORKER_ENDPOINT
+            + "?keyword=" + encodeURIComponent(keyword)
+            + "&business=" + encodeURIComponent(business)
+            + "&goal=" + encodeURIComponent(goal);
+
+          try{
+            const res = await fetch(url, { method:"GET" });
+            const data = await res.json();
+
+            if (!res.ok || data.status !== "success"){
+              showStatus(data.message || "Something went wrong. Please try again.", "err");
+              return;
+            }
+
+            const results = Array.isArray(data.results) ? data.results : [];
+            if (!results.length){
+              showStatus("No results returned. Try a more specific keyword.", "err");
+              return;
+            }
+
+            elTbody.innerHTML = results.map(buildRow).join("");
+            elBest.textContent = "Best pick: " + (data.best_pick || results[0].keyword || "—");
+            elMeta.textContent = "Generated: 3 short-tail + 2 long-tail • AI-estimated levels";
+            elResults.style.display = "block";
+
+            lastCopyBlock = results.map(r =>
+              `${r.keyword} | ${r.intent_type || "—"} | ${r.funnel_stage || "—"} | Vol:${r.volume_level || "—"} | Comp:${r.competition_level || "—"}`
+            ).join("\n");
+
+            elCopyAll.style.display = "inline-flex";
+
+            if (elNextSteps) elNextSteps.style.display = "block";
+
+            const top = results[0] || {};
+            const topFunnel = (top.funnel_stage || "").toString().toUpperCase();
+            const topIntent = (top.intent_type || "").toString();
+            const topKW = (top.keyword || keyword || "").toString();
+
+            setWhatsAppLink(topKW, topFunnel, topIntent);
+
+            (function(){
+              const box = document.getElementById("an_next_cta");
+              const title = document.getElementById("an_next_title");
+              const sub = document.getElementById("an_next_sub");
+              const badges = document.getElementById("an_next_badges");
+
+              const aPrimary = document.getElementById("an_next_primary");
+              const aCampaign = document.getElementById("an_next_campaign");
+              const aLanding = document.getElementById("an_next_landing");
+              const aAudit = document.getElementById("an_next_audit");
+
+              if (!box || !title || !sub || !badges || !aPrimary || !aCampaign || !aLanding || !aAudit) return;
+
+              let headline = "Generate high-quality ad copy from your best keyword";
+              let desc = "Move from keyword ideas → ad messaging → campaign structure with zero friction.";
+              let primaryText = "Generate Ad Copy →";
+
+              if (topFunnel === "BOFU") {
+                headline = "Build conversion-focused ad copy for your best keyword";
+                desc = "BOFU signals mean higher buying intent. Create direct offers, strong CTAs, and tight message match.";
+                primaryText = "Build conversion ad copy →";
+              } else if (topFunnel === "TOFU") {
+                headline = "Create awareness ad copy that attracts the right clicks";
+                desc = "TOFU intent performs best with education, curiosity hooks, and clean positioning. Start with awareness messaging.";
+                primaryText = "Create awareness ad copy →";
+              } else {
+                headline = "Create high-intent ad copy that filters low-quality clicks";
+                desc = "MOFU keywords win with proof, comparisons, and benefits. Generate copy that qualifies intent.";
+                primaryText = "Create high-intent ad copy →";
+              }
+
+              title.textContent = headline;
+              sub.textContent = desc;
+
+              badges.innerHTML = [
+                `<span class="pill gray">Funnel: ${esc(topFunnel || "—")}</span>`,
+                `<span class="pill gray">Intent: ${esc(topIntent || "—")}</span>`,
+                `<span class="pill gray">Best: ${esc(topKW || "—")}</span>`
+              ].join("");
+
+              const q = new URLSearchParams({
+                keyword: topKW,
+                intent: topIntent || "",
+                funnel: topFunnel || "",
+                source: "keyword-analyzer"
+              }).toString();
+
+              aPrimary.textContent = primaryText;
+              aPrimary.href = "https://adsnord.com/tools/ai-ad-copy-generator?" + q;
+              aCampaign.href = "https://adsnord.com/tools/campaign-health-score?" + q;
+              aLanding.href = "https://adsnord.com/tools/landing-page-behavior-analysis?" + q;
+              aAudit.href = "https://adsnord.com/tools/ai-google-ads-self-audit?" + q;
+
+              box.style.display = "block";
+            })();
+
+            showStatus("Done ✅ Scroll to see your results below.", "ok");
+            smoothScrollToResults();
+            setTimeout(()=>hideStatus(), 1400);
+
+          }catch(e){
+            showStatus("Failed to fetch results. Check your worker route.", "err");
+          }finally{
+            elBtn.disabled = false;
+            elBtn.textContent = "Analyze →";
+          }
+        }
+
+        elBtn.addEventListener("click", run);
+
+        elCopyAll.addEventListener("click", function(){
+          if (!lastCopyBlock) return;
+          copyText(lastCopyBlock);
+        });
+
+        document.addEventListener("click", function(e){
+          const btn = e.target.closest && e.target.closest("button[data-copy]");
+          if (!btn) return;
+          copyText(btn.getAttribute("data-copy") || "");
+        });
+
+        elKw.addEventListener("keydown", function(e){
+          if (e.key === "Enter") run();
+        });
+      })();
+    </script>
 
     <!-- Lightweight JSON-LD (Tool page + FAQ) -->
     <script type="application/ld+json">
     {
       "@context":"https://schema.org",
       "@type":"WebPage",
-      "name":"Keyword Analyzer for Google Ads | AdsNord",
+      "name":"Free Google Ads Keyword Analyzer | AdsNord",
       "url":"https://adsnord.com/tools/keyword-analyzer",
       "isPartOf":{"@type":"WebSite","name":"AdsNord","url":"https://adsnord.com"},
-      "about":["Keyword analysis","Google Ads optimization","PPC cost reduction"],
+      "about":[
+        "Google Ads keyword tool",
+        "PPC keyword analyzer",
+        "Keyword intent analyzer",
+        "Google Ads keyword ideas tool"
+      ],
       "mainEntity":{
         "@type":"SoftwareApplication",
         "name":"Keyword Analyzer",
@@ -335,21 +1215,16 @@
         "operatingSystem":"Web",
         "url":"https://adsnord.com/tools/keyword-analyzer",
         "isAccessibleForFree":true,
-        "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+        "featureList":[
+          "Keyword intent classification",
+          "Funnel stage signals (TOFU, MOFU, BOFU)",
+          "AI-estimated volume and competition levels",
+          "Short-tail and long-tail keyword ideas",
+          "Copy-ready keyword output"
+        ]
       }
     }
     </script>
-
-    <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"Is this keyword analyzer really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. This is a free Google Ads tool built to help you review keyword intent and reduce wasted spend signals quickly."}},
-        {"@type":"Question","name":"What should I paste into the tool?","acceptedAnswer":{"@type":"Answer","text":"Paste keywords from a single campaign or theme first. Cleaner inputs produce clearer intent flags and better cleanup suggestions."}},
-        {"@type":"Question","name":"Will this replace a full Google Ads audit?","acceptedAnswer":{"@type":"Answer","text":"It’s a fast diagnostic for keyword waste and overlap. A full audit also reviews tracking, bidding strategy, structure, and landing page conversion flow."}}
-      ]
-    }
-    </script>
-  </div>
+    </div>
 </section>
